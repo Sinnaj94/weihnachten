@@ -10,7 +10,6 @@ $db_link = mysqli_connect (
 
 if ( $db_link )
 {
-	echo "Datenbank funktioniert";
 	$sql = "SELECT * FROM users";
 	$result = $db_link->query($sql);
     if($result->num_rows >0){
@@ -19,7 +18,7 @@ if ( $db_link )
     }
 
 }else{
-	echo "Datenbank funktioniert nicht";
+
 }
 ?>
 <html>

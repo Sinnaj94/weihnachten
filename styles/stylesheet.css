@@ -20,6 +20,7 @@
 }
 
 .form-signin *{
+	min-width: 300px;
 	margin-bottom:10px;
 	border-radius: 0px!important;
 }
