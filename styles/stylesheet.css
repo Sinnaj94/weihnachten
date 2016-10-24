@@ -7,7 +7,7 @@
 }
 
 .form-signin{
-
+	min-width: 300px;
 	padding:5%;
 	width:50%;
 	max-width:600px;
@@ -20,7 +20,7 @@
 }
 
 .form-signin *{
-	min-width: 300px;
+
 	margin-bottom:10px;
 	border-radius: 0px!important;
 }
