@@ -3,20 +3,21 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 
 if ($_POST['submit']){
-	include_once("/php/connection.php");
+
+	include_once("php/connection.php");
 	$name = strip_tags($_POST['name']);
 	$password = strip_tags($_POST['password']);
-
-	$sql = "SELECT id, name, password FROM weihnachten WHERE name = '$name'";
+	$sql = "SELECT * FROM users WHERE name = '$name'";
 	$query = mysqli_query($dbCon, $sql);
-
+	
 	if ($query){
+		echo("HALLO");
 		$row = mysqli_fetch_row($query);
+
 		$userId = $row[0];
 		$dbName = $row[1];
 		$db_Password = $row[2];
 	}
-
 	if ($name == $dbName && $password == $dbPassword) {
 		$_SESSION['name'] = $username;
 		$_SESSION['id'] = $userId;
@@ -56,7 +57,7 @@ if ($_POST['submit']){
 </head>
 <body>
 	<div class="main-container">
-		<form class="form-signin">
+		<div class="form-signin">
 			<div class="wichtel_header">
 				<h1>Wichteln</h1>
 				<h3>2016</h3>
@@ -73,8 +74,9 @@ if ($_POST['submit']){
 					</div>
 					<input class="btn weihnachtsbutton btn-lg btn-block" name="submit" value="Login" type="submit"></input>
 				</form>
-			</form>
-		</form>
+			</div>
+		</div>
+
 		<!--img id="candle" src="img/candle_preset.png"-->
 	</div>
 </body>
