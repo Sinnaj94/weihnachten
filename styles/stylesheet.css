@@ -1,0 +1,58 @@
+.main-container{
+	background-color:#A8383B;
+	position: absolute;
+	height:100%;
+	width:100%;
+
+}
+
+.form-signin{
+
+	padding:5%;
+	width:50%;
+	max-width:600px;
+	background-color: white;
+	margin:0 auto;
+	-webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+	margin-top:10%;
+}
+
+.form-signin *{
+	margin-bottom:10px;
+	border-radius: 0px!important;
+}
+
+.weihnachtsbutton{
+	background-color:#541113;
+	color:white;
+	&:hover{
+		color:white;	
+	}
+}
+
+.weihnachtsbutton:hover{
+	color:white!important;
+	background: #A8383B;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
