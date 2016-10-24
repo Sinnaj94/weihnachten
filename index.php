@@ -1,26 +1,34 @@
-<!DOCTYPE html>
 <?php
-require_once('konfiguration.php');
-$db_link = mysqli_connect (
-    MYSQL_HOST, 
-    MYSQL_BENUTZER, 
-    MYSQL_KENNWORT, 
-    MYSQL_DATENBANK
-);
+error_reporting(E_ALL & ~E_NOTICE);
+session_start();
 
-if ( $db_link )
-{
-	$sql = "SELECT * FROM users";
-	$result = $db_link->query($sql);
-    if($result->num_rows >0){
-    	while($row = $result->fetch_assoc()){
-    	}
-    }
+if ($_POST['submit']){
+	include_once("/php/connection.php");
+	$name = strip_tags($_POST['name']);
+	$password = strip_tags($_POST['password']);
 
-}else{
+	$sql = "SELECT id, name, password FROM weihnachten WHERE name = '$name'";
+	$query = mysqli_query($dbCon, $sql);
 
+	if ($query){
+		$row = mysqli_fetch_row($query);
+		$userId = $row[0];
+		$dbName = $row[1];
+		$db_Password = $row[2];
+	}
+
+	if ($name == $dbName && $password == $dbPassword) {
+		$_SESSION['name'] = $username;
+		$_SESSION['id'] = $userId;
+		header('Location: php/user.php');
+	} else {
+		echo "Incorrect username or password.";
+	}
 }
+
+
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 	<!--http://paletton.com/#uid=15C0u0kllllcz++gXw0pJaGu700-->
@@ -40,23 +48,34 @@ if ( $db_link )
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 	<script src="scripts/logic.js"></script>
+
+	<!--FONT-->
+	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
+
 </head>
 <body>
 	<div class="main-container">
 		<form class="form-signin">
-			<label for="inputEmail"></label>
-			<div class="inner-addon left-addon">
-				<i class="glyphicon glyphicon-user"></i>
-				<input type="text" class="form-control" placeholder="Benutzername" required=""/>
+			<div class="wichtel_header">
+				<h1>Wichteln</h1>
+				<h3>2016</h3>
 			</div>
-			<div class="inner-addon left-addon">
-				<i class="glyphicon glyphicon-lock"></i>
-				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" maxlength="4" pattern="[0-9]*">
-			</div>
-			<button class="btn weihnachtsbutton btn-lg btn-block " type="submit">Login</button>
+			<div class="input-elements">
+				<form action="index.php" method="post">	
+					<div class="inner-addon left-addon">
+						<i class="glyphicon glyphicon-user"></i>
+						<input type="text" class="form-control" placeholder="Benutzername" required="" name="name"/>
+					</div>
+					<div class="inner-addon left-addon">
+						<i class="glyphicon glyphicon-lock"></i>
+						<input type="password" class="form-control" placeholder="Password" required="" maxlength="4" pattern="[0-9]*" name="password">
+					</div>
+					<input class="btn weihnachtsbutton btn-lg btn-block" name="submit" value="Login" type="submit"></input>
+				</form>
+			</form>
 		</form>
+		<!--img id="candle" src="img/candle_preset.png"-->
 	</div>
 </body>
 </html>

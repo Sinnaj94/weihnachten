@@ -6,11 +6,19 @@
 
 }
 
+
+
+.wichtel_header{
+	font-family: 'Mountains of Christmas', cursive;
+	text-align: center;
+}
+
+
 .form-signin{
 	min-width: 300px;
-	padding:5%;
-	width:50%;
-	max-width:600px;
+	padding:2%;
+	width:70%;
+	max-width:700px;
 	background-color: white;
 	margin:0 auto;
 	-webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
@@ -19,7 +27,7 @@
 	margin-top:10%;
 }
 
-.form-signin *{
+.input-elements *{
 
 	margin-bottom:10px;
 	border-radius: 0px!important;
@@ -57,3 +65,10 @@
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+
+#candle{
+	position:fixed;
+	bottom:0px;
+	
+	height:30%;
+}
