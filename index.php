@@ -1,30 +1,27 @@
 <?php
 error_reporting(E_ALL & ~E_NOTICE);
-session_start();
+
 
 if ($_POST['submit']){
 
 	include_once("php/connection.php");
+	$after_login = "php/user.php";
 	$name = strip_tags($_POST['name']);
 	$password = strip_tags($_POST['password']);
-	$sql = "SELECT * FROM users WHERE name = '$name'";
-	$query = mysqli_query($dbCon, $sql);
-	
-	if ($query){
-		echo("HALLO");
-		$row = mysqli_fetch_row($query);
+	$query = "SELECT * FROM users WHERE name = '$name' AND password='$password' LIMIT 1";
+	$result = mysqli_query($dbCon, $query);
+	$anzahl = @mysqli_num_rows($result);
+	if($anzahl > 0){
+		//SESSION AUFBAUEN
+		session_start();
+		$_SESSION['login'] = 1;
+		header('Location: '.$after_login);
 
-		$userId = $row[0];
-		$dbName = $row[1];
-		$db_Password = $row[2];
+	}else{
+		$_SESSION['login'] = 0;
 	}
-	if ($name == $dbName && $password == $dbPassword) {
-		$_SESSION['name'] = $username;
-		$_SESSION['id'] = $userId;
-		header('Location: php/user.php');
-	} else {
-		echo "Incorrect username or password.";
-	}
+	echo $_SESSION['login'];
+
 }
 
 

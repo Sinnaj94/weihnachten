@@ -5,4 +5,5 @@ if (mysqli_connect_errno()){
 }else{
 	echo "Connection to the Database worked.<br>";
 }
+
 ?>
