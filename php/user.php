@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	echo $_SESSION['login'];
+	if(!isset($_SESSION['login'])){ //if login in session is not set
+    	header("Location: ../index.php");
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,13 +32,15 @@
 </head>
 <body>
 	<div class="main-container">
+
 		<div class="form-signin">
 			<div class="wichtel_header">
 				<h1>Hallo <span id="nutzername">!</h1>
 				<h3>Deine Partner sind:</h3>
 				<h1 id="partners"><span>Jannis </span>&<span> Kilian</span></h1>
+				
 			</div>
-			
+			<button class="btn weihnachtsbutton btn-lg btn-block" onclick="logout()">Logout</button>
 		</div>
 
 		<!--img id="candle" src="img/candle_preset.png"-->

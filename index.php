@@ -15,10 +15,11 @@ if ($_POST['submit']){
 		//SESSION AUFBAUEN
 		session_start();
 		$_SESSION['login'] = 1;
+
 		header('Location: '.$after_login);
 
 	}else{
-		$_SESSION['login'] = 0;
+		//$_SESSION['login'] = 0;
 	}
 	echo $_SESSION['login'];
 
