@@ -12,7 +12,7 @@ def generate(_input,number):
 		while(hasDuplicateArray(_temp_array,_user_groups)):
 			randomizeArray(_temp_array)
 		_user_groups[i] = _temp_array
-	printResult(_user_groups)
+	#printResult(_user_groups)
 	for i in range(len(users)):
 		passwords.append(generatePassword(4))
 	

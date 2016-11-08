@@ -1,36 +1,16 @@
 {
-  "teilnehmer": [
-    {
-      "name": "Jannis",
-      "partner": [
-        "Anna",
-        "Peter"
-      ],
-      "pin": 1234
+  "participants" : {
+    "Jannis" : {
+       "password" : 1234,
+       "partners" : [
+          "Michael", "Dettel"
+        ]
     },
-    {
-      "name": "Jannis",
-      "partner": [
-        "Anna",
-        "Peter"
-      ],
-      "pin": 1234
-    },
-    {
-      "name": "Jannis",
-      "partner": [
-        "Anna",
-        "Peter"
-      ],
-      "pin": 1234
-    },
-    {
-      "name": "Jannis",
-      "partner": [
-        "Anna",
-        "Peter"
-      ],
-      "pin": 1234
+    "Kilian" : {
+       "password" : 1234,
+       "partners" : [
+          "Michael", "Dettel"
+        ]
     }
-  ]
+  }
 }

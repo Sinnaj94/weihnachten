@@ -2,34 +2,34 @@
     "teilnehmer": [
         {
             "partner2": [
-                "Nicola", 
                 "Marietta", 
-                "Ursula", 
-                "Ruediger", 
-                "Jannis", 
-                "Alexander", 
-                "Kilian", 
-                "Michael"
-            ], 
-            "password": [
-                "9064", 
-                "2727", 
-                "2470", 
-                "5024", 
-                "5428", 
-                "3755", 
-                "1105", 
-                "1826"
-            ], 
-            "partner1": [
                 "Alexander", 
                 "Ursula", 
                 "Nicola", 
-                "Kilian", 
-                "Marietta", 
                 "Jannis", 
+                "Kilian", 
                 "Michael", 
                 "Ruediger"
+            ], 
+            "password": [
+                "1218", 
+                "4726", 
+                "9175", 
+                "3906", 
+                "7907", 
+                "5392", 
+                "2407", 
+                "6046"
+            ], 
+            "partner1": [
+                "Ruediger", 
+                "Marietta", 
+                "Michael", 
+                "Jannis", 
+                "Alexander", 
+                "Nicola", 
+                "Kilian", 
+                "Ursula"
             ], 
             "name": [
                 "Jannis", 
