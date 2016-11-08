@@ -1,0 +1,36 @@
+{
+  "teilnehmer": [
+    {
+      "name": "Jannis",
+      "partner": [
+        "Anna",
+        "Peter"
+      ],
+      "pin": 1234
+    },
+    {
+      "name": "Jannis",
+      "partner": [
+        "Anna",
+        "Peter"
+      ],
+      "pin": 1234
+    },
+    {
+      "name": "Jannis",
+      "partner": [
+        "Anna",
+        "Peter"
+      ],
+      "pin": 1234
+    },
+    {
+      "name": "Jannis",
+      "partner": [
+        "Anna",
+        "Peter"
+      ],
+      "pin": 1234
+    }
+  ]
+}
