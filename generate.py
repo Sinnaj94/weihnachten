@@ -33,13 +33,13 @@ def randomizeArray(_in_list):
 	random.shuffle(_in_list)
 
 def printList(_in_list):
-	print '[%s]' % ', '.join(map(str, _in_list))	
+	print('[%s]' % ', '.join(map(str, _in_list)))	
 
 def hasDuplicate(list1,list2):
 	index = 0
 	for element, element2 in zip(list1, list2):
 		if(element == element2):
-			print "Found duplicate."
+			print("Found duplicate.")
 			return True
 	return False
 
@@ -50,9 +50,13 @@ def hasDuplicateArray(list,arraylist):
 	return False
 
 def getJSON(outputfilename, _json_users, _json_passwords):
-
-	data = { "teilnehmer": [ { "name": _json_users[0] , "partner1": _json_users[1], "partner2": _json_users[2], "password": _json_passwords} ] }
-	with open('data.json', 'w') as outfile:
-		json.dump(data, outfile, indent=4)
-
+    jsonA = [0] * len(_json_passwords)
+    for i in range(0,len(_json_passwords)):
+        jsonA[i] = {_json_users[0][i]: {"password": _json_passwords[i],"partners":[_json_users[1][i], _json_users[2][i]]}}
+        #out = [_json_users[0],_json_passwords,_json_users[1],_json_users[2]]
+    print(jsonA)
+    #jsonF ={"Name" : {"password" : _json_passwords,"partners" : [_json_users[1], _json_users[2]]}}
+    with open(outputfilename, 'w') as outfile:
+        json.dump(jsonA,outfile,indent=4)
+    
 generate(0,2)

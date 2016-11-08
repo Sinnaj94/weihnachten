@@ -1,5 +1,5 @@
 {
-  "participants" : {
+
     "Jannis" : {
        "password" : 1234,
        "partners" : [
@@ -12,5 +12,5 @@
           "Michael", "Dettel"
         ]
     }
-  }
+  
 }

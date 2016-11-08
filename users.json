@@ -1,0 +1,74 @@
+[
+    {
+        "Jannis": {
+            "password": "0236",
+            "partners": [
+                "Ursula",
+                "Alexander"
+            ]
+        }
+    },
+    {
+        "Kilian": {
+            "password": "9312",
+            "partners": [
+                "Alexander",
+                "Marietta"
+            ]
+        }
+    },
+    {
+        "Marietta": {
+            "password": "4491",
+            "partners": [
+                "Michael",
+                "Jannis"
+            ]
+        }
+    },
+    {
+        "Michael": {
+            "password": "1190",
+            "partners": [
+                "Marietta",
+                "Nicola"
+            ]
+        }
+    },
+    {
+        "Ursula": {
+            "password": "1309",
+            "partners": [
+                "Ruediger",
+                "Kilian"
+            ]
+        }
+    },
+    {
+        "Ruediger": {
+            "password": "4943",
+            "partners": [
+                "Jannis",
+                "Ursula"
+            ]
+        }
+    },
+    {
+        "Alexander": {
+            "password": "0071",
+            "partners": [
+                "Nicola",
+                "Michael"
+            ]
+        }
+    },
+    {
+        "Nicola": {
+            "password": "6568",
+            "partners": [
+                "Kilian",
+                "Ruediger"
+            ]
+        }
+    }
+]

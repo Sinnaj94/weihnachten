@@ -46,11 +46,13 @@
 			</div>
 			{% else %}
 				<div class="wichtel_header">
-					<h1>Hallo <span id="nutzername">!</h1>
+					<h1>Hallo {{ myname }}!</h1>
 					<h3>Deine Partner sind:</h3>
-					<h1 id="partners">{{ name }}</h1>
+					<h1 id="partners">{{ name1 }} & {{ name2 }}</h1>
 				</div>
-				<button class="btn weihnachtsbutton btn-lg btn-block">Logout</button>
+			{% endif %}
+			{% if attempt %}
+				<div class="failure">Login fehlgeschlagen. Hast du Groß- und Kleinschreibung beachtet?</div>
 			{% endif %}
 		</div>
 
