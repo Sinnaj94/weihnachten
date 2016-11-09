@@ -1,22 +1,16 @@
-<?php
-	session_start();
-	echo $_SESSION['login'];
-	if(!isset($_SESSION['login'])){ //if login in session is not set
-    	header("Location: ../index.php");
-	}
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<!--http://paletton.com/#uid=15C0u0kllllcz++gXw0pJaGu700-->
 	<title>Wichteln - Weihnachten 2016</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../styles/stylesheet.css">
-	
 
+	
 	<!-- Latest compiled and minified CSS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+	<script type="text/javascript" src="{{ url_for('static', filename='scripts/logic.js') }}"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/styles.css') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- Optional theme -->
@@ -24,26 +18,22 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="../scripts/logic.js"></script>
 
 	<!--FONT-->
 	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
-	<script src="../scripts/jquery_php.js"></script>
+
 </head>
 <body>
 	<div class="main-container">
+		{% for key, value in userlist.iteritems() %}
 
 		<div class="form-signin">
-			<div class="wichtel_header">
-				<h1>Hallo <span id="nutzername">!</h1>
-				<h3>Deine Partner sind:</h3>
-				<h1 id="partners"><span>Jannis </span>&<span> Kilian</span></h1>
-				
+			<div class="input-elements">
+				<img src="http://tinktura.com.de/wp-content/uploads/2014/10/mistel.png">
+				<div class="wichtel_header">Hallo {{key|e}}! Ich bin's mal wieder, der gute, alte Weihnachtsmann. Kennst du mich noch? Ich habe meinem Wichtelbeauftragten den Auftrag gegeben, diesen Brief an dich weiterzuleiten. Ich hoffe, dass er diesen auch ernst nimmt! Bitte gehe auf die Webseite, die dir der Wichtelmeister zugeschickt hat, und gebe folgende Login-Daten ein: <br><h1 class="user_and_password">Nutzername: {{key|e}}, Passwort: {{value|e}}</h1><br>Achte bitte auf Groß- und Kleinschreibung. Wir sehen uns am spätestens 24. Dezember! Ho, ho, ho.</div>
 			</div>
-			<button class="btn weihnachtsbutton btn-lg btn-block" onclick="logout()">Logout</button>
 		</div>
-
-		<!--img id="candle" src="img/candle_preset.png"-->
+		{% endfor %}
 	</div>
 </body>
 </html>

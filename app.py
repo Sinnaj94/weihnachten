@@ -12,6 +12,10 @@ def hello():
 def login():
     _name = request.form['name']
     _password = request.form['password']
+    #check root
+    _root = getmydata.checkRoot(_name,_password)
+    if(_root != None):
+        return render_template('user.html', userlist = _root)
     _list = getmydata.checkLogin(_name,_password)
     if(_list == None):
         return render_template('index.html', login = True, attempt = True)

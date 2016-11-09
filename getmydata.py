@@ -25,4 +25,25 @@ def checkLogin(name,password):
     if(str(password) != getDataWKey("password",name_attributes)):
         return None
     return getDataWKey("partners",name_attributes)
+
+def checkRoot(name,password):
+    if(name == "WICHTELMASTER"):
+        if(password == "0486"):
+            return getUsersAndPasswords()
+    return None
+
+def getUsersAndPasswords():
+    _string = ""
+    _names = []
+    _passwords = []
+    for object in data:
+        for(key,value) in object.items():
+            _string = _string + str(key) + ": "
+            _names.append(str(key))
+            for(key,value) in value.items():
+                if(key == "password"):
+                    _passwords.append(str(value))
+                    _string = _string + str(value) + "\n"
+    _return = dict(zip(_names,_passwords))
+    return _return
 # End of getmydata.py

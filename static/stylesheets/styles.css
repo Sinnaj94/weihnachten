@@ -1,16 +1,26 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #A8383B;
+  color: #fff;
+}
+
 .main-container{
 	background-color:#A8383B;
 	position: absolute;
 	height:100%;
 	width:100%;
-
 }
 
 
 
 .wichtel_header{
-	font-family: 'Mountains of Christmas', cursive;
+	font-family: 'Mountains of Christmas';
 	text-align: center;
+}
+
+.user_and_password {
+	color: firebrick;
 }
 
 
