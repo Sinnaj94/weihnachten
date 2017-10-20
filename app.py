@@ -24,4 +24,4 @@ def login():
     return render_template('index.html', login = False, myname = _name, name1 = _name1, name2 = _name2)
     
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host="0.0.0.0")

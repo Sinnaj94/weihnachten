@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!--http://paletton.com/#uid=15C0u0kllllcz++gXw0pJaGu700-->
-	<title>Wichteln - Weihnachten 2016</title>
+	<title>Wichteln - Weihnachten 2017</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	
@@ -24,40 +24,40 @@
 
 </head>
 <body>
-	<div class="main-container">
-		<div class="form-signin">
-			
-			{% if login %}
-			<div class="wichtel_header">
-				<h1>Wichteln</h1>
-				<h3>2016</h3>
-			</div>
-			<div class="input-elements">
-				<form action="/login" method="post">	
-					<div class="inner-addon left-addon">
-						<i class="glyphicon glyphicon-user"></i>
-						<input type="text" class="form-control" placeholder="Benutzername" required="" name="name"/>
-					</div>
-					<div class="inner-addon left-addon">
-						<i class="glyphicon glyphicon-lock"></i>
-						<input type="password" class="form-control" placeholder="Password" required="" maxlength="4" pattern="[0-9]*" name="password">
-					</div>
-					<input class="btn weihnachtsbutton btn-lg btn-block" name="submit" value="Login" type="submit"></input>
-				</form>
-			</div>
-			{% else %}
-				<div class="wichtel_header">
-					<h1>Hallo {{ myname }}!</h1>
-					<h3>Deine Partner sind:</h3>
-					<h1 id="partners">{{ name1 }} & {{ name2 }}</h1>
-				</div>
-			{% endif %}
-			{% if attempt %}
-				<div class="failure">Login fehlgeschlagen. Hast du Groß- und Kleinschreibung beachtet?</div>
-			{% endif %}
-		</div>
+    <div class="form-signin">
 
-		<!--img id="candle" src="img/candle_preset.png"-->
-	</div>
+        {% if login %}
+        <div class="wichtel_header">
+            <h1>Wichteln 2017</h1>
+        </div>
+        <div class="input-elements">
+            <form action="/login" method="post">
+                <div class="inner-addon left-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" class="form-control" placeholder="Benutzername" required="" name="name"/>
+                </div>
+                <div class="inner-addon left-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input type="password" class="form-control" placeholder="Password" required="" maxlength="4" pattern="[0-9]*" name="password">
+                </div>
+                <input class="btn weihnachtsbutton btn-lg btn-block" name="submit" value="Login" type="submit"></input>
+            </form>
+        </div>
+        {% else %}
+            <div class="wichtel_header">
+                <h1>Hallo {{ myname }}!</h1>
+                <h3>Deine Partner sind:</h3>
+                <h1 id="partners">{{ name1 }} & {{ name2 }}</h1>
+            </div>
+        {% endif %}
+        {% if attempt %}
+            <div class="failure">Login fehlgeschlagen. Hast du Groß- und Kleinschreibung beachtet?</div>
+        {% endif %}
+        <img src="{{ url_for('static', filename='images/weihnachtsmann.svg') }}" class="weihnachtsmann">
+
+    </div>
+
+    <!--img id="candle" src="img/candle_preset.png"-->
+
 </body>
 </html>

@@ -29,8 +29,8 @@
 
 		<div class="form-signin">
 			<div class="input-elements">
-				<img src="http://tinktura.com.de/wp-content/uploads/2014/10/mistel.png">
-				<div class="wichtel_header">Hallo {{key|e}}! Ich bin's mal wieder, der gute, alte Weihnachtsmann. Kennst du mich noch? Ich habe meinem Wichtelbeauftragten den Auftrag gegeben, diesen Brief an dich weiterzuleiten. Ich hoffe, dass er diesen auch ernst nimmt! Bitte gehe auf die Webseite, die dir der Wichtelmeister zugeschickt hat, und gebe folgende Login-Daten ein: <br><h1 class="user_and_password">Nutzername: {{key|e}}, Passwort: {{value|e}}</h1><br>Achte bitte auf Groß- und Kleinschreibung. Wir sehen uns am spätestens 24. Dezember! Ho, ho, ho.</div>
+				<div class="wichtel_header"><h1>Hallo {{key|e}}!</h1> Ich überbringe dir wie letztes Jahr diese versiegelte Nachricht, die deine Wichtelpartner beinhaltet. Bitte gehe auf die Webseite und nutze folgende Anmeldedaten, um zu erfahren, wer deine Partner sind! <br><h1 class="user_and_password">Nutzername: {{key|e}}, Passwort: {{value|e}}</h1><br>Viele Grüße!<br><img src="https://img0.etsystatic.com/056/0/5170423/il_570xN.683635798_603o.jpg" class="signature"></div>
+				<img src="{{ url_for('static', filename='images/weihnachtsmann.svg') }}" class="weihnachtsmann">
 			</div>
 		</div>
 		{% endfor %}
